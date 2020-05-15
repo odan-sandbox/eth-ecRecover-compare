@@ -20,9 +20,13 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
+    "pretest": "./scripts/start_devnet.sh",
     "test": "run-p test:*",
     "test:build": "yarn build --noEmit",
     "test:jest": "yarn jest --detectOpenHandles --forceExit",
     "test:lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "web3": "^1.2.7"
   }
 }

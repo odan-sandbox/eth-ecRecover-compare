@@ -2,9 +2,8 @@ name: Node CI
 
 on:
   push:
-    branches: "**"
-  schedule:
-    - cron: '0 0 * * *'
+    branches:
+      - "*"
 
 jobs:
   build:

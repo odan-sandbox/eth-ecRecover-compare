@@ -56,7 +56,13 @@ export async function signUsingGeth(message: string): Promise<string> {
 }
 
 async function main(): Promise<void> {
+  const web3 = new Web3(null);
   const message = "🤗";
+  console.log(web3.eth.accounts.hashMessage(message));
+  console.log(web3.eth.accounts.hashMessage(web3.utils.utf8ToHex(message)));
+
+  console.log("-".repeat(10));
+
   const signature = await signUsingGeth(message);
 
   console.log(await recoverUsingWeb3(message, signature));
